@@ -3,6 +3,7 @@ import Vapor
 import FluentPostgreSQL
 
 final class User: Codable {
+
     var id: UUID?
     var name: String
     var username: String
@@ -19,7 +20,6 @@ extension User: Content {}
 extension User: Parameter {}
 
 extension User {
-
     var acronyms: Children<User, Acronym> {
         return children(\.userId)
     }
